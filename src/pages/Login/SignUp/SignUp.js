@@ -3,8 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth'
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
-import { isDisabled } from '@testing-library/user-event/dist/utils';
-import { sendEmailVerification } from 'firebase/auth';
+// import { isDisabled } from '@testing-library/user-event/dist/utils';
+// import { sendEmailVerification } from 'firebase/auth';
 
 const Signup = () => {
     const [agree, setAgree] = useState(false);
@@ -30,7 +30,10 @@ const Signup = () => {
     }
 
     if(user){
-        navigate('/home');
+        // navigate('/home');
+        return <div>
+            <h5 className='text-center text-success'>A verification email has been sent to you, please click the link to continue using the website</h5>
+        </div>
     }
 
 
